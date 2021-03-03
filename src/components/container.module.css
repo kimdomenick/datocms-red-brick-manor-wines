@@ -8,22 +8,22 @@
   color: rebeccapurple;
 }
 
-.nav-links {
+.navLinks {
   display: flex;
   list-style: none;
   padding-left: 0;
 }
 
-.nav-link-item {
+.navLinkItem {
   padding-right: 2rem;
 }
 
-.nav-link-text {
+.navLinkText {
   color: black;
+}
 
-  &:hover,
-  &:focus {
-    color: green;
-    text-decoration: underline;
-  }
+.navLinkText:hover,
+.navLinkText:focus {
+  color: green;
+  text-decoration: underline;
 }

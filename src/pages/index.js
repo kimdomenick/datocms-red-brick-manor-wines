@@ -4,7 +4,7 @@ import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import MoreStories from "../components/more-stories";
 import { HelmetDatoCms } from "gatsby-source-datocms";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 
 export default function Index({ data: { allPosts, site, blog } }) {
   const heroPost = allPosts.nodes[0];
@@ -14,14 +14,11 @@ export default function Index({ data: { allPosts, site, blog } }) {
     <Container pageTitle="Home">
       <HelmetDatoCms seo={blog.seo} favicon={site.favicon} />
       <Intro />
-      <Link to='/about'>
-        Go to About Page
-      </Link>
       {heroPost && (
         <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}
-          date={heroPost.date}
+          date={heroPost.date}ß
           author={heroPost.author}
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
