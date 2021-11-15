@@ -20,7 +20,7 @@ export default function Post({ data: { site, post, morePosts } }) {
           date={post.date}
           author={post.author}
         />
-        <PostBody content={post.content} />
+        <PostBody content={post.body} />
       </article>
       <SectionSeparator />
       {morePosts.nodes.length > 0 && <MoreStories posts={morePosts.nodes} />}

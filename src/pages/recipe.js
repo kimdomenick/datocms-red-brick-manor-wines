@@ -2,36 +2,37 @@ import React from "react"
 import Container from "../components/container"
 import Intro from "../components/intro"
 import { graphql } from "gatsby"
+import Footer from "../components/footer";
 
-const RecipePage = ({data}) => {
+const RecipePage = ({ data }) => {
   return (
-    <Container pageTitle="Recipes">
-      <main>
-        <Intro />
-        <p>Some weird wine recipes.</p>
-        <ul>
-          { data.allFile.nodes.map(node => {
-            return (
-              <li key={node.name}>
-                {node.name}
-              </li>
-            )
-          })}
-        </ul>
-      </main>
-    </Container>
-    
-  )
-}
+    <>
+      <Container pageTitle="Recipes">
+        <main>
+          <Intro />
+          <p>Some weird wine recipes.</p>
+          <ul>
+            {data.allDatoCmsRecipe.nodes.map((node) => {
+              return <li key={node.title}>{node.title}</li>;
+            })}
+          </ul>
+        </main>
+      </Container>
+      <Footer />
+    </>
+  );
+};
 
 export const query = graphql`
   query Recipes {
-    allFile(filter: {dir: {regex: "/recipe/"}}) {
+    allDatoCmsRecipe {
       nodes {
-        name
+        title
+        slug
+        description
       }
     }
   }
-`
+`;
 
 export default RecipePage

@@ -11,9 +11,6 @@ import Header from "./header"
 export default function Container({ children, pageTitle }) {
   return (
     <div className="container mx-auto px-5">
-      <Header />
-      <title>{pageTitle}</title>
-      <h1>{pageTitle}</h1>
       <div className={navContainer}>
         <nav>
           <ul className={navLinks}>
@@ -35,8 +32,9 @@ export default function Container({ children, pageTitle }) {
           </ul>
         </nav>
       </div>
-
+      <Header />
+      <title>{pageTitle}</title>
       {children}
     </div>
-  ) 
+  );
 }
