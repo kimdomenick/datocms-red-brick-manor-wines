@@ -1,15 +1,55 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Container from "../../components/container";
-import Header from "../../components/header";
+import PostTitle from "../../components/post-title";
 
 export default function Recipe({ data: { recipe } }) {
   return (
     <Container>
-      <Header />
       <article>
-        <h1>{recipe.title}</h1>
-        <h2>{recipe.description}</h2>
+        <PostTitle>{recipe.title}</PostTitle>
+        <section className="recipe__description">
+          <div className="max-w-2xl mx-auto">
+            <div className="prose prose-lg prose-blue">
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
+                Description
+              </h2>
+              <p className="text-lg leading-relaxed mb-4">
+                {recipe.description}
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="recipe__ingredients">
+          <div className="max-w-2xl mx-auto">
+            <div className="prose prose-lg prose-blue">
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
+                Ingredients
+              </h2>
+              {recipe.ingredients}
+            </div>
+          </div>
+        </section>
+        <section className="recipe__instructions">
+          <div className="max-w-2xl mx-auto">
+            <div className="prose prose-lg prose-blue">
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
+                Instructions
+              </h2>
+              {recipe.instructions}
+            </div>
+          </div>
+        </section>
+        <section className="recipe__notes">
+          <div className="max-w-2xl mx-auto">
+            <div className="prose prose-lg prose-blue">
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
+                Notes
+              </h2>
+              {recipe.notes}
+            </div>
+          </div>
+        </section>
       </article>
     </Container>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Container from "../../components/container";
-import Header from "../../components/header";
 import MoreStories from "../../components/more-stories";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
@@ -12,7 +11,6 @@ export default function Post({ data: { site, post, morePosts } }) {
   return (
     <Container>
       <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
-      <Header />
       <article>
         <PostHeader
           title={post.title}
@@ -20,7 +18,7 @@ export default function Post({ data: { site, post, morePosts } }) {
           date={post.date}
           author={post.author}
         />
-        <PostBody content={post.body} />
+        <PostBody content={post.content} />
       </article>
       <SectionSeparator />
       {morePosts.nodes.length > 0 && <MoreStories posts={morePosts.nodes} />}
