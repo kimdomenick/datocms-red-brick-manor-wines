@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Container from "../../components/container";
 import PostTitle from "../../components/post-title";
-import Footer from "../components/footer";
+import Footer from "../../components/footer";
 
 export default function Recipe({ data: { recipe } }) {
   return (

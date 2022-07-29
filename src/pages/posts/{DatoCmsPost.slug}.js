@@ -6,7 +6,7 @@ import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import SectionSeparator from "../../components/section-separator";
 import { HelmetDatoCms } from "gatsby-source-datocms";
-import Footer from "../components/footer";
+import Footer from "../../components/footer";
 
 export default function Post({ data: { site, post, morePosts } }) {
   return (
