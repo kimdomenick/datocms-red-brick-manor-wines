@@ -14,8 +14,20 @@ const RecipePage = ({ data }) => {
         <main>
           <PostTitle>{page_title}</PostTitle>
           <p>
-            Here are some of the wine recipes I've created and experimented
-            with. See pictures, read about end results after aging, and more...
+            Wine recipes aren't all that different from one another. You have
+            whatever juice you want to ferment, yeast, sugar, and a few other
+            additives. What makes recipes unique are the different strains of
+            yeast, different amounts of this or that additive, different
+            sweetness levels, and different aging times.
+          </p>
+          <p>
+            Sometimes processes vary, depending on the type of wine, but the
+            basic steps from fermentation to bottle are largely the same.
+          </p>
+          <p>
+            Here are some of my own wine recipes along with some wine recipe
+            kits I've tried. See pictures, read about my process, end results
+            after aging, and more...
           </p>
           <ul>
             {data.allDatoCmsRecipe.nodes.map((node) => {
