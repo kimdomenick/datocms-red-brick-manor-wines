@@ -1,34 +1,31 @@
 import React from "react";
 import Container from "../components/container";
 import HeroPost from "../components/hero-post";
+import Intro from "../components/intro";
 import MoreStories from "../components/more-stories";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 import { graphql } from "gatsby";
-import Footer from "../components/footer";
 
 export default function Index({ data: { allPosts, site, blog } }) {
   const heroPost = allPosts.nodes[0];
   const morePosts = allPosts.nodes.slice(1);
 
   return (
-    <>
-      <Container pageTitle="Home">
-        <HelmetDatoCms seo={blog.seo} favicon={site.favicon} />
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            ß
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
-      <Footer />
-    </>
+    <Container>
+      <HelmetDatoCms seo={blog.seo} favicon={site.favicon} />
+      <Intro />
+      {heroPost && (
+        <HeroPost
+          title={heroPost.title}
+          coverImage={heroPost.coverImage}
+          date={heroPost.date}
+          author={heroPost.author}
+          slug={heroPost.slug}
+          excerpt={heroPost.excerpt}
+        />
+      )}
+      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+    </Container>
   );
 }
 
@@ -51,23 +48,18 @@ export const query = graphql`
         excerpt
         date
         coverImage {
-          large: fluid(imgixParams: { fm: "jpg" }, sizes: "(max-width: 1500px) 100vw, 1500px") {
-            ...GatsbyDatoCmsFluid
-          }
-          small: fluid(imgixParams: { fm: "jpg" }, sizes: "(max-width: 760px) 100vw, (max-width: 1500px) 50vw, 700px") {
-            ...GatsbyDatoCmsFluid
-          }
+          large: gatsbyImageData(width: 1500)
+          small: gatsbyImageData(width: 760)
         }
         author {
           name
           picture {
-            fixed(
+            gatsbyImageData(
+              layout: FIXED
               width: 48
               height: 48
-              imgixParams: { fm: "jpg", fit: "crop", sat: -100 }
-            ) {
-              ...GatsbyDatoCmsFixed
-            }
+              imgixParams: { sat: -100 }
+            )
           }
         }
       }
