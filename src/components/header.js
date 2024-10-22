@@ -14,11 +14,11 @@ export default function Header() {
 
   return (
     <div>
-      <StaticImage
+      {/* <StaticImage
         src="../../static/assets/images/RedBrickLogo.png"
         layout="fixed"
         width={150}
-      />
+      /> */}
       <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
         <Link to="/" className="hover:underline">
           {data.site.siteMetadata.title}
