@@ -5,7 +5,8 @@ import Footer from "../components/footer";
 import { Link } from "gatsby";
 import PostTitle from "../components/post-title";
 import Intro from "../components/intro";
-import MoreStories from "../components/more-stories";
+import MoreRecipes from "../components/more-recipes";
+import Header from "../components/header";
 
 const RecipePage = ({ data }) => {
   const page_title = "Recipes";
@@ -14,6 +15,7 @@ const RecipePage = ({ data }) => {
   return (
     <>
       <Container pageTitle="Recipes">
+        <Header />
         <Intro />
         <main>
           <PostTitle>{page_title}</PostTitle>
@@ -47,7 +49,7 @@ const RecipePage = ({ data }) => {
               );
             })}
           </ul>
-          <MoreStories posts={recipePost} />
+          <MoreRecipes posts={recipePost} />
         </main>
       </Container>
       <Footer />

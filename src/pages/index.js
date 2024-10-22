@@ -6,6 +6,7 @@ import MoreStories from "../components/more-stories";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 import { graphql } from "gatsby";
 import Footer from "../components/footer";
+import Header from "../components/header";
 
 export default function Index({ data: { allPosts, site, blog } }) {
   const heroPost = allPosts.nodes[0];
@@ -15,6 +16,7 @@ export default function Index({ data: { allPosts, site, blog } }) {
     <>
       <Container>
         <HelmetDatoCms seo={blog.seo} favicon={site.favicon} />
+        <Header />
         <Intro />
         {heroPost && (
           <HeroPost
