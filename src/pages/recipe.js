@@ -67,6 +67,17 @@ export const query = graphql`
           large: gatsbyImageData(width: 1500)
           small: gatsbyImageData(width: 760)
         }
+        author {
+          name
+          picture {
+            gatsbyImageData(
+              layout: FIXED
+              width: 48
+              height: 48
+              imgixParams: { sat: -100 }
+            )
+          }
+        }
       }
     }
   }
