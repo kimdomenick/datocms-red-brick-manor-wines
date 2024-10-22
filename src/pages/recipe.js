@@ -57,11 +57,16 @@ const RecipePage = ({ data }) => {
 
 export const query = graphql`
   query Recipes {
-    allDatoCmsRecipe {
+    allDatoCmsRecipe(sort: { fields: date, order: DESC }, limit: 20) {
       nodes {
         title
         slug
-        description
+        excerpt
+        date
+        coverImage {
+          large: gatsbyImageData(width: 1500)
+          small: gatsbyImageData(width: 760)
+        }
       }
     }
   }
