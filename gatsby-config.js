@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Blog Demo",
+    title: "Red Brick Manor Wines",
   },
   plugins: [
     "gatsby-plugin-postcss",
@@ -18,5 +18,12 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `recipe`,
+        path: `${__dirname}/recipe/`,
+      },
+    },
   ],
 };

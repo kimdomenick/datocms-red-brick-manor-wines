@@ -1,4 +1,5 @@
-import Container from './container'
+import React from "react";
+import Container from "./container";
 
 export default function Footer() {
   return (
