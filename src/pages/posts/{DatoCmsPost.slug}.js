@@ -7,24 +7,28 @@ import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import SectionSeparator from "../../components/section-separator";
 import { HelmetDatoCms } from "gatsby-source-datocms";
+import Footer from "../../components/footer";
 
 export default function Post({ data: { site, post, morePosts } }) {
   return (
-    <Container>
-      <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
-      <Header />
-      <article>
-        <PostHeader
-          title={post.title}
-          coverImage={post.coverImage}
-          date={post.date}
-          author={post.author}
-        />
-        <PostBody content={post.content} />
-      </article>
-      <SectionSeparator />
-      {morePosts.nodes.length > 0 && <MoreStories posts={morePosts.nodes} />}
-    </Container>
+    <>
+      <Container>
+        <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
+        <Header />
+        <article>
+          <PostHeader
+            title={post.title}
+            coverImage={post.coverImage}
+            date={post.date}
+            author={post.author}
+          />
+          <PostBody content={post.content} />
+        </article>
+        <SectionSeparator />
+        {morePosts.nodes.length > 0 && <MoreStories posts={morePosts.nodes} />}
+      </Container>
+      <Footer />
+    </>
   );
 }
 

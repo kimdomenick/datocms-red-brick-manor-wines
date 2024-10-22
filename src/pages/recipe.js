@@ -4,13 +4,17 @@ import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import { Link } from "gatsby";
 import PostTitle from "../components/post-title";
+import Intro from "../components/intro";
+import MoreStories from "../components/more-stories";
 
 const RecipePage = ({ data }) => {
   const page_title = "Recipes";
+  const recipePost = data.allDatoCmsRecipe.nodes;
 
   return (
     <>
       <Container pageTitle="Recipes">
+        <Intro />
         <main>
           <PostTitle>{page_title}</PostTitle>
           <p>
@@ -43,6 +47,7 @@ const RecipePage = ({ data }) => {
               );
             })}
           </ul>
+          <MoreStories posts={recipePost} />
         </main>
       </Container>
       <Footer />
