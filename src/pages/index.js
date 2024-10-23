@@ -47,7 +47,7 @@ export const query = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
     }
-    allPosts: allDatoCmsPost(sort: { fields: date, order: DESC }, limit: 20) {
+    allPosts: allDatoCmsPost(sort: { fields: date, order: DESC }, limit: 6) {
       nodes {
         title
         slug
