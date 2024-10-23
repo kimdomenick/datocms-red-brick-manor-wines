@@ -89,6 +89,18 @@ export default function Recipe({ data: { recipe } }) {
               </div>
             </section>
           )}
+          {recipe.endResulst && (
+            <section className="recipe__results">
+              <div className="max-w-2xl mx-auto">
+                <div className="prose prose-lg prose-blue">
+                  <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
+                    End Results
+                  </h2>
+                  {splitText(recipe.endResults)}
+                </div>
+              </div>
+            </section>
+          )}
         </article>
       </Container>
       <Footer />
@@ -111,6 +123,7 @@ export const query = graphql`
       finishing {
         gatsbyImageData(layout: CONSTRAINED, width: 672)
       }
+      endResults
     }
   }
 `;

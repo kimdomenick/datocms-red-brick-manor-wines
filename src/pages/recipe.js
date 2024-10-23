@@ -25,13 +25,14 @@ const RecipePage = ({ data }) => {
               sweetness levels, and different aging times.
             </p>
             <p>
-              Sometimes processes vary, depending on the type of wine, but the
-              basic steps from fermentation to bottle are largely the same.
+              Depending on the type of wine, processes may vary, but the basic
+              steps from fermentation to bottle are largely the same.
             </p>
             <p>
-              Here are some of my own wine recipes along with some wine recipe
-              kits I've tried. See pictures, read about my process, end results
-              after aging, and more...
+              Here are some of my own wine recipes, including some of the more
+              bizarre combinations I've experiemented with, along with reviews
+              of wine ingredient kits from various suppliers. See pictures, read
+              about my process, end results after aging, and more...
             </p>
           </div>
           <MoreRecipes posts={recipePost} />
