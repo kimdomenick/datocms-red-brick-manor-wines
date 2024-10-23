@@ -3,11 +3,13 @@ import { graphql } from "gatsby";
 import Container from "../../components/container";
 import PostTitle from "../../components/post-title";
 import Footer from "../../components/footer";
+import Header from "../../components/header";
 
 export default function Recipe({ data: { recipe } }) {
   return (
     <>
       <Container>
+        <Header />
         <article>
           <PostTitle>{recipe.title}</PostTitle>
           <section className="recipe__description">

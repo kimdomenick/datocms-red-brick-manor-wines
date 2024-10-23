@@ -3,6 +3,8 @@ import Container from "./container";
 import Menu from "./menu";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-accent-1 border-t border-accent-2 py-4">
       <Container>
@@ -13,6 +15,14 @@ export default function Footer() {
           <p>Because we love open source. And wine.</p>
         </div>
         <Menu justify="justify-end" />
+        <div
+          className="flex flex-row justify-end mt-2"
+          style={{ fontSize: "75%" }}
+        >
+          <p>
+            Copyright {currentYear}, Red Brick Manor Wines. All rights reserved.
+          </p>
+        </div>
       </Container>
     </footer>
   );
