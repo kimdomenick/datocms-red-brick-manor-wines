@@ -2,12 +2,10 @@ import React from "react";
 import Container from "../components/container";
 import { graphql } from "gatsby";
 import Footer from "../components/footer";
-import PostTitle from "../components/post-title";
 import MoreStories from "../components/more-stories";
 import Header from "../components/header";
 
 const BlogPage = ({ data }) => {
-  const page_title = "Blog";
   const blogPost = data.allDatoCmsPost.nodes;
 
   return (
@@ -15,11 +13,7 @@ const BlogPage = ({ data }) => {
       <Container pageTitle="Blog">
         <Header />
         <main>
-          <PostTitle>{page_title}</PostTitle>
-          <div className="prose prose-lg prose-blue mb-16">
-            <p>Explore all posts.</p>
-          </div>
-          <MoreStories posts={blogPost} />
+          <MoreStories posts={blogPost} heading="All Articles" />
         </main>
       </Container>
       <Footer />

@@ -40,3 +40,58 @@ a.hover-spec:hover:after {
   width: 100%;
   transition: 0s;
 }
+
+@media screen and (max-width: 767px) {
+  header {
+    .menu-desktop {
+      display: none;
+    }
+
+    .menu-mobile {
+      width: 165px;
+      position: absolute;
+      top: 2rem;
+      right: 0;
+
+      details summary {
+        cursor: pointer;
+        text-align: center;
+        transition: margin 150ms ease-out;
+
+        span {
+          position: absolute;
+          background: black;
+          transform: translateY(-50%) rotate(0deg);
+          width: 20%;
+          height: 10%;
+          transition: top 0.1s ease 0.3s, transform 0.3s ease;
+          left: 1rem;
+        }
+      }
+
+      details[open] summary {
+        margin-block-end: 10px;
+
+        span {
+          display: none;
+        }
+      }
+
+      summary::marker {
+        content: none;
+      }
+    }
+  }
+
+  footer {
+    .menu-mobile {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-mobile {
+    display: none;
+  }
+}

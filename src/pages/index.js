@@ -28,7 +28,9 @@ export default function Index({ data: { allPosts, site, blog } }) {
             excerpt={heroPost.excerpt}
           />
         )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        {morePosts.length > 0 && (
+          <MoreStories posts={morePosts} heading="Recent Articles" />
+        )}
       </Container>
       <Footer />
     </>

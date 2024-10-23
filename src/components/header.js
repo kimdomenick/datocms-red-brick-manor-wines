@@ -15,21 +15,23 @@ export default function Header() {
   `);
 
   return (
-    <div className="flex-col md:flex-row flex items-top md:justify-between mb-16 md:mb-12">
-      <div>
-        <div className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
-          <Link to="/" className="hover:underline">
-            <StaticImage
-              src="../../static/assets/images/RedBrickLogo.png"
-              layout="fixed"
-              width={150}
-            />
-            {data.site.siteMetadata.title}
-          </Link>
+    <header>
+      <div className="flex-col md:flex-row flex items-top md:justify-between mb-16 md:mb-12">
+        <div>
+          <div className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">
+            <Link to="/" className="hover:underline">
+              <StaticImage
+                src="../../static/assets/images/RedBrickLogo.png"
+                layout="fixed"
+                width={150}
+              />
+              {data.site.siteMetadata.title}
+            </Link>
+          </div>
+          <p>Farmhouse-Style Originals</p>
         </div>
-        <p>Farmhouse-Style Originals</p>
+        <Menu />
       </div>
-      <Menu />
-    </div>
+    </header>
   );
 }

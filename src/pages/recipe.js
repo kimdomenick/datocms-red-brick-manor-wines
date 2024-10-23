@@ -2,7 +2,6 @@ import React from "react";
 import Container from "../components/container";
 import { graphql } from "gatsby";
 import Footer from "../components/footer";
-import { Link } from "gatsby";
 import PostTitle from "../components/post-title";
 import MoreRecipes from "../components/more-recipes";
 import Header from "../components/header";

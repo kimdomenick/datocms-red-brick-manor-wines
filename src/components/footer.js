@@ -16,7 +16,7 @@ export default function Footer() {
         </div>
         <Menu justify="justify-end" />
         <div
-          className="flex flex-row justify-end mt-2"
+          className="flex flex-row justify-center md:justify-end mt-2"
           style={{ fontSize: "75%" }}
         >
           <p>
