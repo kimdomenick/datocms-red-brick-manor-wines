@@ -1,0 +1,42 @@
+a.hover-spec {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 8px 0;
+  color: #000;
+  text-decoration: none;
+}
+a.hover-spec:hover{
+  color: #000;
+  text-decoration: none;
+}
+
+a.hover-spec:before, a.hover-spec:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  background: #000;
+}
+
+a.hover-spec:before {
+  left: 0;
+}
+a.hover-spec:after {
+  right: 0;
+  background: #000;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+a.hover-spec:hover:before {
+  background: #000;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+a.hover-spec:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}

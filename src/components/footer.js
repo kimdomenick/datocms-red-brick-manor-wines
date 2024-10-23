@@ -1,16 +1,18 @@
 import React from "react";
 import Container from "./container";
+import Menu from "./menu";
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <footer className="bg-accent-1 border-t border-accent-2 py-4">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
+        <div className="py-16 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4">
             WHY
           </h3>
           <p>Because we love open source. And wine.</p>
         </div>
+        <Menu justify="justify-end" />
       </Container>
     </footer>
   );
