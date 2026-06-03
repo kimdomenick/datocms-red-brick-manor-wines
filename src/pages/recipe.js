@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import PostTitle from "../components/post-title";
 import MoreRecipes from "../components/more-recipes";
 import Header from "../components/header";
+import Seo from "../components/seo";
 
 const RecipePage = ({ data }) => {
   const page_title = "Recipes";
@@ -12,7 +13,7 @@ const RecipePage = ({ data }) => {
 
   return (
     <>
-      <Container pageTitle="Recipes">
+      <Container>
         <Header />
         <main>
           <PostTitle>{page_title}</PostTitle>
@@ -42,6 +43,10 @@ const RecipePage = ({ data }) => {
     </>
   );
 };
+
+export function Head() {
+  return <Seo title="Recipes" />;
+}
 
 export const query = graphql`
   query Recipes {

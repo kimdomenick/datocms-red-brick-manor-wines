@@ -4,13 +4,14 @@ import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import MoreStories from "../components/more-stories";
 import Header from "../components/header";
+import Seo from "../components/seo";
 
 const BlogPage = ({ data }) => {
   const blogPost = data.allDatoCmsPost.nodes;
 
   return (
     <>
-      <Container pageTitle="Blog">
+      <Container>
         <Header />
         <main>
           <MoreStories posts={blogPost} heading="All Articles" />
@@ -20,6 +21,10 @@ const BlogPage = ({ data }) => {
     </>
   );
 };
+
+export function Head() {
+  return <Seo title="Blog" />;
+}
 
 export const query = graphql`
   query Blogs {

@@ -5,11 +5,12 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import PostTitle from "../components/post-title";
 import { Link } from "gatsby";
+import Seo from "../components/seo";
 
 const AboutPage = () => {
   return (
     <>
-      <Container pageTitle="About Red Brick Manor Wines">
+      <Container>
         <Header />
         <main>
           {/* <StaticImage
@@ -122,5 +123,9 @@ const AboutPage = () => {
     </>
   );
 };
+
+export function Head() {
+  return <Seo title="About" />;
+}
 
 export default AboutPage;

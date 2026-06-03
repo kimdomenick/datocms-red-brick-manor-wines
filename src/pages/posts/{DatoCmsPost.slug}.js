@@ -6,14 +6,13 @@ import MoreStories from "../../components/more-stories";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import SectionSeparator from "../../components/section-separator";
-import { HelmetDatoCms } from "gatsby-source-datocms";
 import Footer from "../../components/footer";
+import Seo from "../../components/seo";
 
 export default function Post({ data: { site, post, morePosts } }) {
   return (
     <>
       <Container>
-        <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
         <Header />
         <article>
           <PostHeader
@@ -29,6 +28,15 @@ export default function Post({ data: { site, post, morePosts } }) {
       </Container>
       <Footer />
     </>
+  );
+}
+
+export function Head({ data: { site, post } }) {
+  return (
+    <Seo
+      title={post.title}
+      tags={[...(post.seo?.tags || []), ...(site.favicon?.tags || [])]}
+    />
   );
 }
 

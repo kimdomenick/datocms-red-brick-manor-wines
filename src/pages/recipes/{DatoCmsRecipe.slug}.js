@@ -5,6 +5,7 @@ import PostTitle from "../../components/post-title";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import { GatsbyImage } from "gatsby-plugin-image";
+import Seo from "../../components/seo";
 
 export default function Recipe({ data: { recipe } }) {
   function splitText(text) {
@@ -16,9 +17,6 @@ export default function Recipe({ data: { recipe } }) {
       </div>
     );
   }
-  const prepping = recipe.prepping;
-  console.log("prepping", prepping);
-
   return (
     <>
       <Container>
@@ -108,6 +106,10 @@ export default function Recipe({ data: { recipe } }) {
       <Footer />
     </>
   );
+}
+
+export function Head({ data: { recipe } }) {
+  return <Seo title={recipe.title} />;
 }
 
 export const query = graphql`

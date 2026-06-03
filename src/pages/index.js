@@ -3,10 +3,10 @@ import Container from "../components/container";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import MoreStories from "../components/more-stories";
-import { HelmetDatoCms } from "gatsby-source-datocms";
 import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Seo from "../components/seo";
 
 export default function Index({ data: { allPosts, site, blog } }) {
   const heroPost = allPosts.nodes[0];
@@ -15,7 +15,6 @@ export default function Index({ data: { allPosts, site, blog } }) {
   return (
     <>
       <Container>
-        <HelmetDatoCms seo={blog.seo} favicon={site.favicon} />
         <Header />
         <Intro />
         {heroPost && (
@@ -34,6 +33,12 @@ export default function Index({ data: { allPosts, site, blog } }) {
       </Container>
       <Footer />
     </>
+  );
+}
+
+export function Head({ data: { site, blog } }) {
+  return (
+    <Seo tags={[...(blog.seo?.tags || []), ...(site.favicon?.tags || [])]} />
   );
 }
 
