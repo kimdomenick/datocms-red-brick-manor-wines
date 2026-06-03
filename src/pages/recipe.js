@@ -50,7 +50,7 @@ export function Head() {
 
 export const query = graphql`
   query Recipes {
-    allDatoCmsRecipe(sort: { fields: date, order: DESC }, limit: 20) {
+    allDatoCmsRecipe(sort: { date: DESC }, limit: 20) {
       nodes {
         title
         slug

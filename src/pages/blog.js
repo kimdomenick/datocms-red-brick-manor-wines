@@ -28,7 +28,7 @@ export function Head() {
 
 export const query = graphql`
   query Blogs {
-    allDatoCmsPost(sort: { fields: date, order: DESC }) {
+    allDatoCmsPost(sort: { date: DESC }) {
       nodes {
         title
         slug

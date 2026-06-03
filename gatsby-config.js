@@ -1,4 +1,6 @@
-require("dotenv").config();
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
   siteMetadata: {
@@ -13,8 +15,6 @@ module.exports = {
         environment: process.env.DATO_ENVIRONMENT,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
